@@ -115,7 +115,7 @@ class SocialLoginSerializer(serializers.Serializer):
             raise serializers.ValidationError(
                 _("Incorrect input. access_token or code is required."))
 
-        social_token = adapter.parse_token({'access_token': access_token})
+        social_token = adapter.parse_token(token)
         social_token.app = app
 
         try:
